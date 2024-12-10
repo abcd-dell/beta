@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-kube-deployment
+  name: kuber-service
 spec:
-  type: LoadBalancer  # This exposes the service externally
   selector:
-    app: my-kube-app  # Must match the labels in the deployment
+    app: kuber
   ports:
     - protocol: TCP
-      port: 8082  # External port to access the app
-      targetPort: 3000  # Port on the container (Node.js app is listening here)
+      port: 8088
+      targetPort: 8088
+  type: LoadBalancer 
